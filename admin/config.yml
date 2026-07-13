@@ -1,0 +1,35 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+collections:
+  - name: "site"
+    label: "Studio details"
+    files:
+      - name: "settings"
+        label: "Studio details"
+        file: "data/settings.json"
+        fields:
+          - {label: "Name", name: "name", widget: "string"}
+          - {label: "Role", name: "role", widget: "string"}
+          - {label: "Intro", name: "intro", widget: "text"}
+          - {label: "About", name: "about", widget: "text"}
+          - {label: "Email", name: "email", widget: "string"}
+          - {label: "Instagram URL", name: "instagram", widget: "string", required: false}
+  - name: "work"
+    label: "Projects"
+    files:
+      - name: "projects"
+        label: "Projects"
+        file: "data/projects.json"
+        fields:
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Category", name: "category", widget: "string"}
+              - {label: "Year", name: "year", widget: "string"}
+              - {label: "Description", name: "description", widget: "text", required: false}
+              - {label: "Cover image", name: "image", widget: "image", required: false}
