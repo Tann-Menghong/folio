@@ -1,35 +1,42 @@
-backend:
+﻿backend:
   name: git-gateway
   branch: main
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 collections:
   - name: "site"
-    label: "Studio details"
+    label: "Studio details / ព័ត៌មានស្ទូឌីយោ"
     files:
       - name: "settings"
-        label: "Studio details"
+        label: "Studio details / ព័ត៌មានស្ទូឌីយោ"
         file: "data/settings.json"
         fields:
           - {label: "Name", name: "name", widget: "string"}
-          - {label: "Role", name: "role", widget: "string"}
-          - {label: "Intro", name: "intro", widget: "text"}
-          - {label: "About", name: "about", widget: "text"}
+          - {label: "Role (English)", name: "role", widget: "string"}
+          - {label: "Role (Khmer)", name: "role_km", widget: "string", required: false}
+          - {label: "Intro (English)", name: "intro", widget: "text"}
+          - {label: "Intro (Khmer)", name: "intro_km", widget: "text", required: false}
+          - {label: "About (English)", name: "about", widget: "text"}
+          - {label: "About (Khmer)", name: "about_km", widget: "text", required: false}
           - {label: "Email", name: "email", widget: "string"}
+          - {label: "Telegram URL", name: "telegram", widget: "string", required: false}
           - {label: "Instagram URL", name: "instagram", widget: "string", required: false}
   - name: "work"
-    label: "Projects"
+    label: "Projects / ស្នាដៃ"
     files:
       - name: "projects"
-        label: "Projects"
+        label: "Projects / ស្នាដៃ"
         file: "data/projects.json"
         fields:
           - label: "Projects"
             name: "projects"
             widget: "list"
             fields:
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Category", name: "category", widget: "string"}
+              - {label: "Title (English)", name: "title", widget: "string"}
+              - {label: "Title (Khmer)", name: "title_km", widget: "string", required: false}
+              - {label: "Category (English)", name: "category", widget: "string"}
+              - {label: "Category (Khmer)", name: "category_km", widget: "string", required: false}
               - {label: "Year", name: "year", widget: "string"}
-              - {label: "Description", name: "description", widget: "text", required: false}
+              - {label: "Description (English)", name: "description", widget: "text", required: false}
+              - {label: "Description (Khmer)", name: "description_km", widget: "text", required: false}
               - {label: "Cover image", name: "image", widget: "image", required: false}
